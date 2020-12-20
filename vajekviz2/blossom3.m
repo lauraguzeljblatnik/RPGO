@@ -20,7 +20,20 @@ function b = blossom3 (B , U)
 % b vrednost razcveta polinoma , določenega z matriko B,
 % v točkah , določenih z matriko U
 
-n = size(B,1) -1;
+% stopnja
+n = size(U,1);
 
+B1=B;
+for r=1:n
+    s1 = n+1-r;
+    t1 = zeros(s1);
+    for i=1:s1
+        for j=1:(s1+1-i)
+            t1(i,j)=U(r,1)*B1(i,j)+U(r,2)*B1(i,j+1)+U(r,3)*B1(i+1,j);
+        end
+    end
+    B1=t1;
+end
+b=B1(1,1);
 
 end

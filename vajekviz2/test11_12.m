@@ -16,13 +16,16 @@ v = linspace(0,1,10);
 
 [bx by bz] = bezier2(Bx,By,Bz,u,v);
 
-%display(bx)
-%display(by)
-%display(bz)
+display(bx)
+display(by)
+display(bz)
 
 %Coonsove ploskve
 
 %Kontrolne tocke robnih krivulj:
+
+%deal vrne isto matriko za vse tri vrednosti
+%v bistvu prekopira  :0
 
 [Bx,By,Bz] = deal(zeros(9,11));
 

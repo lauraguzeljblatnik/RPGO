@@ -12,7 +12,8 @@ t = linspace(0,1,100);
 %rplotbezier (B , w, t);
 %Tocke na krivulji:
 
-rdecasteljau(B,w,0.5);
+cast = rdecasteljau(B,w,0.5);
+display(cast)
 
 a1 = rbezier(B,w,linspace(0,1,11));
 w(2) = 2;
@@ -24,6 +25,13 @@ display(a1);
 display(a2);
 display(a3);
 
+%farinove točke
+n = size (B,1);
+f = zeros(n-1,2);
+for i=1:(n-1)
+   f(i,:) = w(i)/(w(i)+w(i+1))*B(i,:) + w(i+1)/(w(i)+w(i+1))*B(i+1,:);
+end
+display(f)
 
 %visanje stopnje
 B = [1 0; 1 4; -3 2; -3 -2; 1 -4; 1 0];

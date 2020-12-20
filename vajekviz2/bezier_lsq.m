@@ -30,15 +30,5 @@ for i=1:n
     end
 end
 
-% 
-% for i = 1:n
-%     for j = 1:d
-%         decast = decasteljau(B(:,d),t(i));
-%         tocka = zeros(1,d);
-%         tocka(1,j) = decast(1,n1);
-%         %decast(1,n+1,j)
-%     end
-%     b(i,:) = tocka;
-% end
 
 end
